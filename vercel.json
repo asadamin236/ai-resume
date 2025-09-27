@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "name": "ai-resume-backend",
+  "builds": [
+    {
+      "src": "server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/upload/(.*)",
+      "dest": "/upload/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "server.js"
+    }
+  ],
+  "env": {
+    "MONGO_URL": "@mongo_url",
+    "JWT_SECRET": "@jwt_secret"
+  },
+  "functions": {
+    "server.js": {
+      "maxDuration": 30
+    }
+  }
+}
