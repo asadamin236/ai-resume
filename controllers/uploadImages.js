@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import Resumes from "../models/ResumeModel.js";
+import Resumes from "../models/resumeModel.js";
 import upload from "../middlewares/uploadImages.js";
 import { error } from "console";
 
