@@ -2,7 +2,7 @@
 
 A comprehensive Node.js backend API for an AI-powered resume builder application with user authentication, resume management, and file handling capabilities.
 
-## 🚀 Features
+## Features
 
 - **User Authentication** - JWT-based authentication system
 - **Resume Management** - Complete CRUD operations for resumes
@@ -11,7 +11,7 @@ A comprehensive Node.js backend API for an AI-powered resume builder application
 - **Security** - User-specific data access and validation
 - **MongoDB Integration** - Mongoose ODM for database operations
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 backend/
@@ -31,7 +31,7 @@ backend/
 └── package.json             # Dependencies and scripts
 ```
 
-## 🛠️ Installation & Setup
+## Installation & Setup
 
 ### Prerequisites
 - Node.js (v14 or higher)
@@ -67,7 +67,7 @@ backend/
    npm run dev
    ```
 
-## 📊 Database Schema
+## Database Schema
 
 ### Resume Model
 ```javascript
@@ -225,7 +225,7 @@ Response: {
 }
 ```
 
-## 🎨 Default Template
+## Default Template
 
 When creating a new resume, the system automatically populates it with a professional default template:
 
@@ -258,7 +258,7 @@ When creating a new resume, the system automatically populates it with a profess
 }
 ```
 
-## 🔒 Security Features
+## Security Features
 
 ### Authentication & Authorization
 - **JWT Tokens** for stateless authentication
@@ -272,7 +272,7 @@ When creating a new resume, the system automatically populates it with a profess
 - **Error Handling** with descriptive messages
 - **Rate Limiting** (recommended for production)
 
-## 📁 File Management
+## File Management
 
 ### Uploads Directory
 The system automatically creates an `uploads` folder for storing:
@@ -289,7 +289,7 @@ if (!fs.existsSync(uploadsFolder)) {
 }
 ```
 
-## 🚀 Controller Functions Explained
+## Controller Functions Explained
 
 ### ResumeController.js
 
@@ -329,7 +329,7 @@ if (!fs.existsSync(uploadsFolder)) {
 - **Security**: Ownership verification
 - **Output**: New resume with "(Copy)" suffix
 
-## 🔧 Development
+## Development
 
 ### Running in Development Mode
 ```bash
@@ -357,7 +357,7 @@ NODE_ENV=development         # Environment mode
 }
 ```
 
-## 📋 Error Handling
+## Error Handling
 
 All API responses follow a consistent format:
 
@@ -388,7 +388,7 @@ All API responses follow a consistent format:
 - `404` - Not Found
 - `500` - Internal Server Error
 
-## 🚀 Production Deployment
+## Production Deployment
 
 ### Recommended Environment
 - **Node.js** v16+ LTS
@@ -406,7 +406,7 @@ All API responses follow a consistent format:
 - [ ] Enable compression
 - [ ] Set up monitoring
 
-## 🤝 Contributing
+##  Contributing
 
 1. Fork the repository
 2. Create feature branch (`git checkout -b feature/amazing-feature`)
@@ -414,11 +414,11 @@ All API responses follow a consistent format:
 4. Push to branch (`git push origin feature/amazing-feature`)
 5. Open Pull Request
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 📞 Support
+## Support
 
 For support and questions:
 - Create an issue in the repository
@@ -427,4 +427,4 @@ For support and questions:
 
 ---
 
-**Built with ❤️ for creating professional resumes with AI assistance**
+**Built with for creating professional resumes with AI assistance**
