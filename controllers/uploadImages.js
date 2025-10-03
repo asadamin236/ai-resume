@@ -6,7 +6,7 @@ import upload from "../middlewares/uploadImages.js";
 export const uploadImages = async (req, res) => {
   try {
     //Configure multer to handle images
-    upload.fields([{ name: "thumbnail" }, { name: "profileImage" }])(req, res, async (err) => {
+    upload.fields([{ name: "thumbnail" }, { name: "profileImage" }, { name: "resumeFile" }])(req, res, async (err) => {
       if (err) {
         return res
           .status(400)
@@ -31,6 +31,7 @@ export const uploadImages = async (req, res) => {
 
       const newThumbnail = req.files?.thumbnail?.[0];
       const newProfileImage = req.files?.profileImage?.[0];
+      const newResumeFile = req.files?.resumeFile?.[0];
 
       if (newThumbnail) {
         if (resume.thumbnailLink) {
@@ -62,12 +63,26 @@ export const uploadImages = async (req, res) => {
         resume.profileInfo.profilePreviewUrl = `${baseUrl}/upload/${newProfileImage.filename}`;
       }
 
+      // Handle resume file upload
+      if (newResumeFile) {
+        if (resume.resumeFileLink) {
+          const oldResumeFile = path.join(
+            uploadFolder,
+            path.basename(resume.resumeFileLink)
+          );
+
+          if (fs.existsSync(oldResumeFile)) fs.unlinkSync(oldResumeFile);
+        }
+        resume.resumeFileLink = `${baseUrl}/upload/${newResumeFile.filename}`;
+      }
+
       await resume.save();
 
       res.status(200).json({
-        message: "Image uploaded successfully",
+        message: "Files uploaded successfully",
         thumbnailLink: resume.thumbnailLink,
         profilePreviewUrl: resume.profileInfo?.profilePreviewUrl || null,
+        resumeFileLink: resume.resumeFileLink || null,
       });
     });
   } catch (error) {
